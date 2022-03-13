@@ -7,12 +7,6 @@ class LoginViewController: UIViewController {
     
     private let user = User.getUser()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        usernameTF.text = user.username
-        passwordTF.text = user.password
-    }
-    
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         usernameTF.text = ""
         passwordTF.text = ""
@@ -42,11 +36,7 @@ class LoginViewController: UIViewController {
                helloVC.usernameValue = user.person.name
            } else if let navigationVC = viewController as? UINavigationController {
                guard let aboutUserVC = navigationVC.topViewController as? AboutViewController else { return }
-                   
-               guard let contactVC = navigationVC.topViewController as? ContactViewController else { return }
-               
                aboutUserVC.person = user.person
-               contactVC.contacts = user.person.contacts
            }
        }
     }

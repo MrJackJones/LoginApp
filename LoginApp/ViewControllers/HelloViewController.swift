@@ -8,7 +8,7 @@ class HelloViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        helloLabel.text = "Hello, \(usernameValue)"
+        helloLabel.text = "Hello, I am \(usernameValue)"
     }
 
 }
